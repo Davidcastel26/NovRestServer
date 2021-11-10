@@ -21,37 +21,35 @@ const router = Router()
 // /     })
 // / })
 
-router.get('/api', ( req, res ) => {
+router.get('/', ( req, res ) => {
+// router.get('/api', ( req, res ) => { // we do not need '/api' since we already provide the rout instruction into the server js file
     res.json({
         msg: 'get API'
     })
 })
 
-router.put('/api', ( req, res) => {
+router.put('/', ( req, res) => {
     res.json({
         msg:'put API'
     })
 })
 
-router.post('/api', ( req, res ) => {
+router.post('/', ( req, res ) => {
     res.json({
         msg:'post API'
     })
 })
 
-router.delete( '/api', ( req, res ) => {
+router.delete( '/', ( req, res ) => {
     res.json({
         msg:'delete API'
     })
+})
 
-router.patch('/api', ( req, res ) =>{
+router.patch('/', ( req, res ) =>{
     res.json({
         msg:'patch API'
     })
 })
-})
-
-
-
 
 module.exports = router;
