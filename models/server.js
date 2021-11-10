@@ -5,7 +5,16 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
 
+        // Middlewares
+        this.middlewares();
+
+        // Routs from my app
         this.routes();
+    }
+
+    middlewares(){
+        //directory public
+        this.app.use( express.static('public'))
     }
 
     routes(){
