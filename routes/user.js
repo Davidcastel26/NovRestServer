@@ -1,8 +1,9 @@
 const { Router } = require('express')
+const { userGet, userPut, userPost, userDelete, userPatch } = require('../controllers/user')
 
 const router = Router()
 
-
+//----------------------------------------------------------
 // this.app.get('/api', ( req, res ) => {
 //     // we need to use json insted of 'send'
 //     // since we would like to return a object
@@ -20,36 +21,23 @@ const router = Router()
 // /         msg:'put API'
 // /     })
 // / })
+//---------------------------------------------------------
+// router.get('/', ( req, res ) => {
+// // router.get('/api', ( req, res ) => { // we do not need '/api' since we already provide the rout instruction into the server js file
+//     res.json({
+//         msg: 'get API'
+//     })
+// })
+//-----------------------------------------------------------
 
-router.get('/', ( req, res ) => {
-// router.get('/api', ( req, res ) => { // we do not need '/api' since we already provide the rout instruction into the server js file
-    res.json({
-        msg: 'get API'
-    })
-})
+router.get('/', userGet)
 
-router.put('/', ( req, res) => {
-    res.json({
-        msg:'put API'
-    })
-})
+router.put('/:id', userPut)
 
-router.post('/', ( req, res ) => {
-    res.json({
-        msg:'post API'
-    })
-})
+router.post('/', userPost)
 
-router.delete( '/', ( req, res ) => {
-    res.json({
-        msg:'delete API'
-    })
-})
+router.delete( '/', userDelete)
 
-router.patch('/', ( req, res ) =>{
-    res.json({
-        msg:'patch API'
-    })
-})
+router.patch('/', userPatch)
 
 module.exports = router;
