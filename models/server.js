@@ -18,8 +18,34 @@ class Server{
     }
 
     routes(){
-        this.app.get('/api', (req, res) => {
-            res.send('hello world')
+        this.app.get('/api', ( req, res ) => {
+            // we need to use json insted of 'send'
+            // since we would like to return a object
+            // res.send('hello world')
+            res.json({
+          //res.status(403).json({
+                //ok is an opcional props
+                // ok: true,
+                msg: 'get API'
+            })
+        })
+
+        this.app.put('/api', ( req, res) => {
+            res.json({
+                msg:'put API'
+            })
+        })
+
+        this.app.post('/api', ( req, res ) => {
+            res.json({
+                msg:'post API'
+            })
+        })
+
+        this.app.delete( '/api', ( req, res ) => {
+            res.json({
+                msg:'delete API'
+            })
         })
     }
 
