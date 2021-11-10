@@ -18,7 +18,7 @@ class Server{
     }
 
     routes(){
-        this.app.get('/', (req, res) => {
+        this.app.get('/api', (req, res) => {
             res.send('hello world')
         })
     }
